@@ -1,1 +1,10 @@
-./Simple Task.xcodeproj/project.xcworkspace/xcuserdata/hichamchourak.xcuserdatad/UserInterfaceState.xcuserstate
+UserInterfaceState.xcuserstate
+build
+*.pbxuser
+*.perspectivev3
+*.mode1v3
+*~
+*~.nib
+*~.xib 
+.DS_Store 
+xcuserdata/

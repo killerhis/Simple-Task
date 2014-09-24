@@ -8,6 +8,7 @@
 
 #import "ItemDetailViewController.h"
 #import "ChecklistItem.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface ItemDetailViewController ()
 
@@ -79,8 +80,22 @@
     [self.view addGestureRecognizer:gestureRecognizer];
     
     //NSLog(@"%@", [[items mutableArrayValueForKey: @"itemId"] lastObject]);
+}
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
+    // Google Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    if (self.itemToEdit != nil) {
+        [tracker set:kGAIScreenName value:@"CheckListEditView"];
+    } else {
+        [tracker set:kGAIScreenName value:@"CheckListAddView"];
+    }
+    
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)updateSwitchControl
@@ -133,7 +148,7 @@
         {
             item.itemId = [[[items mutableArrayValueForKey: @"itemId"] lastObject] intValue] + 1;
         } else {
-            item.itemId = [items count];
+            item.itemId = (int)[items count];
         }
         
         //NSLog(@"%d", item.itemId);

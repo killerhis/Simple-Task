@@ -8,6 +8,7 @@
 
 #import "ChecklistsViewController.h"
 #import "ChecklistItem.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface ChecklistsViewController ()
 
@@ -21,6 +22,17 @@
 {
     [super viewDidLoad];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Google Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"CheckListView"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -134,7 +146,7 @@
 
 - (void)itemDetailViewController:(ItemDetailViewController *)controller didFinishAddingItem:(ChecklistItem *)item
 {
-    int newRowIndex = [items count];
+    int newRowIndex = (int)[items count];
 
     [items addObject:item];
     
@@ -149,7 +161,7 @@
 
 - (void)itemDetailViewController:(ItemDetailViewController *)controller didFinishEditingItem:(ChecklistItem *)item
 {
-    int index = [items indexOfObject:item];
+    int index = (int)[items indexOfObject:item];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -162,7 +174,7 @@
 
 - (void)itemDetailViewController:(ItemDetailViewController *)controller didFinishRemovingItem:(ChecklistItem *)item
 {
-    int index = [items indexOfObject:item];
+    int index = (int)[items indexOfObject:item];
     
     [items removeObjectAtIndex:index];
     

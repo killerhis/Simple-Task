@@ -8,6 +8,7 @@
 
 #import "EmptyViewController.h"
 #import "ChecklistItem.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface EmptyViewController ()
 
@@ -40,6 +41,15 @@
     //NSLog(@"%d", [items count]);
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Google Analytics
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"CheckListEmptyView"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
 
 - (void)didReceiveMemoryWarning
 {

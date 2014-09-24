@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0901B8DB-9710-4FEA-BE1B-38DAA809F49E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Simple Task</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6DCC5BFC050213498E5ABE7BBB0FBA56CAB99C19</key>
+		<string>https://github.com/killerhis/Simple-Task.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Simple Task.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6DCC5BFC050213498E5ABE7BBB0FBA56CAB99C19</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/killerhis/Simple-Task.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6DCC5BFC050213498E5ABE7BBB0FBA56CAB99C19</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6DCC5BFC050213498E5ABE7BBB0FBA56CAB99C19</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Checklist%20v2</string>
+		</dict>
+	</array>
+</dict>
+</plist>
